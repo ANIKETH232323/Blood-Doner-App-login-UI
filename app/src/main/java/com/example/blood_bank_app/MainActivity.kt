@@ -1,5 +1,6 @@
 package com.example.blood_bank_app
 
+import android.graphics.fonts.FontStyle
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -19,7 +20,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 
 
 class MainActivity : ComponentActivity() {
@@ -51,7 +54,8 @@ fun FrontPage(){
                 tex.value = it
             },
             label = {
-                Text(text = "Enter Your Name")
+                Text(text = "Enter Your Name",fontWeight = FontWeight.Bold
+                )
             },
             leadingIcon = {
                 Icon(painter = painterResource(id =R.drawable.baseline_person_24),
@@ -67,7 +71,9 @@ fun FrontPage(){
                 tex1.value = it
             },
             label = {
-                Text(text = "Enter Your Gmail-Id")
+                Text(text = "Enter Your Gmail-Id",
+                    fontWeight = FontWeight.Bold
+                )
             },
             leadingIcon = {
                 Icon(painter = painterResource(id =R.drawable.baseline_email_24),
