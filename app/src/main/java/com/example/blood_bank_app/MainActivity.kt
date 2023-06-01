@@ -10,7 +10,10 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.shape.CutCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
@@ -46,15 +49,19 @@ fun FrontPage(){
             mutableStateOf("")
         }
         OutlinedTextField(
-
-            value = tex.value ,
+            value = tex.value,
             onValueChange ={
                 tex.value = it
             },
             label = {
                 Text(text = "Enter Your Name")
+            },
+            leadingIcon = {
+                Icon(imageVector = Icons.Filled.Email,
+                    contentDescription ="Email-icon" )
             }
         )
+
     }
 
 }
