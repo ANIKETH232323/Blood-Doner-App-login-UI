@@ -54,6 +54,22 @@ fun FrontPage(){
                 Text(text = "Enter Your Name")
             },
             leadingIcon = {
+                Icon(painter = painterResource(id =R.drawable.baseline_person_24),
+                    contentDescription = "Email")
+            }
+        )
+        val tex1 = remember {
+            mutableStateOf("")
+        }
+        OutlinedTextField(
+            value = tex1.value,
+            onValueChange ={
+                tex1.value = it
+            },
+            label = {
+                Text(text = "Enter Your Gmail-Id")
+            },
+            leadingIcon = {
                 Icon(painter = painterResource(id =R.drawable.baseline_email_24),
                     contentDescription = "Email")
             }
