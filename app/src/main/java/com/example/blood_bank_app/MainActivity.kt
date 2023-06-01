@@ -13,6 +13,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -57,6 +58,9 @@ fun FrontPage(){
                 Text(text = "Enter Your Name",fontWeight = FontWeight.Bold
                 )
             },
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                unfocusedBorderColor = Color.Black
+            ),
             leadingIcon = {
                 Icon(painter = painterResource(id =R.drawable.baseline_person_24),
                     contentDescription = "Email")
@@ -70,6 +74,9 @@ fun FrontPage(){
             onValueChange ={
                 tex1.value = it
             },
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                unfocusedBorderColor = Color.Black
+            ),
             label = {
                 Text(text = "Enter Your Gmail-Id",
                     fontWeight = FontWeight.Bold
