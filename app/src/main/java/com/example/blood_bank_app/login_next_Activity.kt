@@ -23,9 +23,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.blood_bank_app.ui.theme.BloodBankAppTheme
 import com.example.blood_bank_app.ui.theme.Purple40
 import java.util.jar.Attributes
@@ -44,20 +46,20 @@ class login_next_Activity : ComponentActivity() {
                 Card(modifier = Modifier
                     .fillMaxWidth()
                     .height(250.dp)
-                    .padding(50.dp),
+                    .padding(20.dp),
                     shape = RoundedCornerShape(15.dp),
                 ){
                     Column(modifier = Modifier.padding(15.dp)) {
                         Row {
-                            Text(text = "Name:")
+                            Text(text = "Name:", fontSize = 16.sp, fontWeight = FontWeight.Bold)
 
-                            Text(i?: "No Name")
+                            Text(i?: "No Name",fontSize = 16.sp, fontWeight = FontWeight.Bold)
                         }
 
                         Row() {
-                            Text(text = "Email:")
+                            Text(text = "Gmail:",fontSize = 16.sp, fontWeight = FontWeight.Bold)
 
-                            Text(h?: "No Gmail")
+                            Text(h?: "No Gmail",fontSize = 16.sp, fontWeight = FontWeight.Bold)
                         }
                     }
 
