@@ -59,7 +59,7 @@ class login_next_Activity : ComponentActivity() {
                         Row() {
                             Text(text = "Gmail:",fontSize = 16.sp, fontWeight = FontWeight.Bold)
 
-                            Text(h?: "No Gmail",fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                            Text(h?: "i",fontSize = 16.sp, fontWeight = FontWeight.Bold)
                         }
                     }
 

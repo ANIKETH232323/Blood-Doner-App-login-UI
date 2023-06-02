@@ -87,6 +87,7 @@ fun FrontPage(){
         }
         OutlinedTextField(
             value = tex1,
+            maxLines = 1,
             onValueChange ={
                 tex1 = it
             },
