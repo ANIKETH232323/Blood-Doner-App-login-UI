@@ -34,7 +34,7 @@ class login_next_Activity : ComponentActivity() {
                     .padding(20.dp),
                     shape = RoundedCornerShape(15.dp),
                 ){
-                    Column(modifier = Modifier.padding(15.dp)) {
+                    Column(modifier = Modifier.padding(25.dp)) {
                         Row {
                             Text(text = "Name:", fontSize = 16.sp, fontWeight = FontWeight.Bold)
 
