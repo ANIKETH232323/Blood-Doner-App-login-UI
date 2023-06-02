@@ -47,7 +47,7 @@ class login_next_Activity : ComponentActivity() {
                     .padding(50.dp),
                     shape = RoundedCornerShape(15.dp),
                 ){
-                    Column() {
+                    Column(modifier = Modifier.padding(15.dp)) {
                         Row {
                             Text(text = "Name:")
 
