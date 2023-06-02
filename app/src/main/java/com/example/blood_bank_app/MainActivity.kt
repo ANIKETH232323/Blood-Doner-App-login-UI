@@ -23,8 +23,10 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -59,14 +61,14 @@ fun FrontPage(){
             .fillMaxHeight(),
         ) {
         Image(painter = painterResource(id = R.drawable.r), contentDescription = "Blood")
-        val tex = remember {
+        var tex  by remember {
             mutableStateOf("")
         }
         OutlinedTextField(
-            value = tex.value,
+            value = tex,
             maxLines = 1,
             onValueChange ={
-                tex.value = it
+                tex = it
             },
             label = {
                 Text(text = "Enter Your Name",fontWeight = FontWeight.Bold
@@ -80,14 +82,13 @@ fun FrontPage(){
                     contentDescription = "Email")
             }
         )
-        val tex1 = remember {
+        var tex1 by remember {
             mutableStateOf("")
         }
         OutlinedTextField(
-            value = tex1.value,
-            maxLines = 1,
+            value = tex1,
             onValueChange ={
-                tex1.value = it
+                tex1 = it
             },
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 unfocusedBorderColor = Color.Black
@@ -107,8 +108,8 @@ fun FrontPage(){
         Button(onClick = {
 
                 val nav = Intent(context,login_next_Activity::class.java)
-                nav.putExtra("Name",1)
-                nav.putExtra("Gmail",2)
+                nav.putExtra("Name",tex)
+                nav.putExtra("Gmail ",tex1)
                 context.startActivity(nav)
             }, colors = ButtonDefaults.buttonColors(Color.Black)) {
                 Text(text = "Sign Up",

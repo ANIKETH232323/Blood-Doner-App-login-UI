@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -27,37 +28,53 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.blood_bank_app.ui.theme.BloodBankAppTheme
 import com.example.blood_bank_app.ui.theme.Purple40
+import java.util.jar.Attributes
+import java.util.jar.Attributes.Name
 
 class login_next_Activity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val i = intent.getStringExtra("Name")
+        val h = intent.getStringExtra("Gmail")
         setContent {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally ,
+                modifier = Modifier.fillMaxSize(),
+            ) {
+                Card(modifier = Modifier
+                    .fillMaxWidth()
+                    .height(250.dp)
+                    .padding(50.dp),
+                    shape = RoundedCornerShape(15.dp),
+                ){
+                    Column() {
+                        Row {
+                            Text(text = "Name:")
 
+                            Text(i?: "No Name")
+                        }
+
+                        Row() {
+                            Text(text = "Email:")
+
+                            Text(h?: "No Gmail")
+                        }
+                    }
+
+                }
+            }
         }
     }
 }
-@Composable
-fun card_view(){
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally ,
-        modifier = Modifier.fillMaxSize(),
-     ) {
-        Card(modifier = Modifier.fillMaxWidth()
-            .height(250.dp)
-            .padding(20.dp),
-            shape = RoundedCornerShape(15.dp),
-            content = {
-                Text(text = "Hello How are You",Modifier.padding(15.dp).fillMaxSize(),
-                textAlign = TextAlign.Center)
-            }
-        )
-    }
-}
+//@Composable
+//fun card_view(){
+//
+//}
 
 
 
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun GreetingPreview() {
-    card_view()
-}
+//@Preview(showBackground = true, showSystemUi = true)
+//@Composable
+//fun GreetingPreview() {
+//    card_view()
+//}
