@@ -1,5 +1,6 @@
 package com.example.blood_bank_app
 
+import android.content.Intent
 import android.graphics.fonts.FontStyle
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -27,12 +28,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat.startActivity
 import java.time.format.TextStyle
 
 
@@ -53,7 +56,7 @@ fun FrontPage(){
     Column(horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .background(Color.Red)
-            .fillMaxHeight()
+            .fillMaxHeight(),
         ) {
         Image(painter = painterResource(id = R.drawable.r), contentDescription = "Blood")
         val tex = remember {
@@ -61,6 +64,7 @@ fun FrontPage(){
         }
         OutlinedTextField(
             value = tex.value,
+            maxLines = 1,
             onValueChange ={
                 tex.value = it
             },
@@ -81,6 +85,7 @@ fun FrontPage(){
         }
         OutlinedTextField(
             value = tex1.value,
+            maxLines = 1,
             onValueChange ={
                 tex1.value = it
             },
@@ -98,18 +103,17 @@ fun FrontPage(){
             }
         )
         Spacer(modifier = Modifier.size(30.dp))
-        Row() {
-            Button(onClick = { }, colors = ButtonDefaults.buttonColors(Color.Black)) {
+        val context = LocalContext.current
+        Button(onClick = {
+
+                val nav = Intent(context,login_next_Activity::class.java)
+                context.startActivity(nav)
+            }, colors = ButtonDefaults.buttonColors(Color.Black)) {
                 Text(text = "Sign Up",
                     fontWeight = FontWeight.Bold,
 
                 )
             }
-            Spacer(modifier = Modifier.size(30.dp))
-            Button(onClick = { }, colors = ButtonDefaults.buttonColors(Color.Black)) {
-                Text(text = "Sign In", fontWeight = FontWeight.Bold)
-            }
-        }
         Spacer(modifier = Modifier.size(15.dp))
         Text(text = "Or SIgn In WIth", fontWeight = FontWeight.Bold,
             fontSize = 17.sp,
