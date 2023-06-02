@@ -11,8 +11,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
@@ -26,8 +29,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import java.time.format.TextStyle
 
 
 class MainActivity : ComponentActivity() {
@@ -93,14 +99,29 @@ fun FrontPage(){
         )
         Spacer(modifier = Modifier.size(30.dp))
         Row() {
-            Button(onClick = { }) {
-                Text(text = "Sign Up")
+            Button(onClick = { }, colors = ButtonDefaults.buttonColors(Color.Black)) {
+                Text(text = "Sign Up",
+                    fontWeight = FontWeight.Bold,
+
+                )
             }
             Spacer(modifier = Modifier.size(30.dp))
-            Button(onClick = { }) {
-                Text(text = "Sign In")
+            Button(onClick = { }, colors = ButtonDefaults.buttonColors(Color.Black)) {
+                Text(text = "Sign In", fontWeight = FontWeight.Bold)
             }
         }
+        Spacer(modifier = Modifier.size(15.dp))
+        Text(text = "Or SIgn In WIth", fontWeight = FontWeight.Bold,
+            fontSize = 17.sp,
+            textAlign = TextAlign.Center
+        )
+        Spacer(modifier = Modifier.size(20.dp))
+        Image(painter = painterResource(id = R.drawable.google4), contentDescription ="Google Icon" ,
+            modifier = Modifier
+                .width(85.dp)
+                .height(50.dp)
+            )
+
 
 
     }
