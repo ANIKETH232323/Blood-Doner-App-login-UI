@@ -52,7 +52,6 @@ fun card_view(){
             }
         )
     }
-
 }
 
 
