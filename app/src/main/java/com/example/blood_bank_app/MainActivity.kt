@@ -107,6 +107,8 @@ fun FrontPage(){
         Button(onClick = {
 
                 val nav = Intent(context,login_next_Activity::class.java)
+                nav.putExtra("Name",1)
+                nav.putExtra("Gmail",2)
                 context.startActivity(nav)
             }, colors = ButtonDefaults.buttonColors(Color.Black)) {
                 Text(text = "Sign Up",
