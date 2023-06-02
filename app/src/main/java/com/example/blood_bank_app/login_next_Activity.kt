@@ -22,7 +22,7 @@ class login_next_Activity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val i = intent.getStringExtra("Name")
-        val h = intent.getStringExtra("Gmail")
+//        val h = intent.getStringExtra("Gmail")
         setContent {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally ,
@@ -41,11 +41,11 @@ class login_next_Activity : ComponentActivity() {
                             Text(i?: "No Name",fontSize = 16.sp, fontWeight = FontWeight.Bold)
                         }
 
-                        Row() {
-                            Text(text = "Gmail:",fontSize = 16.sp, fontWeight = FontWeight.Bold)
-
-                            Text(h?: "i",fontSize = 16.sp, fontWeight = FontWeight.Bold)
-                        }
+//                        Row() {
+//                            Text(text = "Gmail:",fontSize = 16.sp, fontWeight = FontWeight.Bold)
+//
+//                            Text(h?: "i",fontSize = 16.sp, fontWeight = FontWeight.Bold)
+//                        }
                     }
 
                 }

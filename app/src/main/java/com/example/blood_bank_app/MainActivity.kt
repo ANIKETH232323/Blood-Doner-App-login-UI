@@ -82,35 +82,35 @@ fun FrontPage(){
                     contentDescription = "Email")
             }
         )
-        var tex1 by remember {
-            mutableStateOf("")
-        }
-        OutlinedTextField(
-            value = tex1,
-            maxLines = 1,
-            onValueChange ={
-                tex1 = it
-            },
-            colors = TextFieldDefaults.outlinedTextFieldColors(
-                unfocusedBorderColor = Color.Black
-            ),
-            label = {
-                Text(text = "Enter Your Gmail-Id",
-                    fontWeight = FontWeight.Bold
-                )
-            },
-            leadingIcon = {
-                Icon(painter = painterResource(id =R.drawable.baseline_email_24),
-                    contentDescription = "Email")
-            }
-        )
+//        var tex1 by remember {
+//            mutableStateOf("")
+//        }
+//        OutlinedTextField(
+//            value = tex1,
+//            maxLines = 1,
+//            onValueChange ={
+//                tex1 = it
+//            },
+//            colors = TextFieldDefaults.outlinedTextFieldColors(
+//                unfocusedBorderColor = Color.Black
+//            ),
+//            label = {
+//                Text(text = "Enter Your Gmail-Id",
+//                    fontWeight = FontWeight.Bold
+//                )
+//            },
+//            leadingIcon = {
+//                Icon(painter = painterResource(id =R.drawable.baseline_email_24),
+//                    contentDescription = "Email")
+//            }
+//        )
         Spacer(modifier = Modifier.size(30.dp))
         val context = LocalContext.current
         Button(onClick = {
 
                 val nav = Intent(context,login_next_Activity::class.java)
                 nav.putExtra("Name",tex)
-                nav.putExtra("Gmail ",tex1)
+//                nav.putExtra("Gmail ",tex1)
                 context.startActivity(nav)
             }, colors = ButtonDefaults.buttonColors(Color.Black)) {
                 Text(text = "Sign Up",
